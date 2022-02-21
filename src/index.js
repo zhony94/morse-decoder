@@ -36,15 +36,14 @@ const MORSE_TABLE = {
     '----.':  '9',
     '-----':  '0',
 };
-let holder = []
-let result = ''
 
-function decode(expr) {
-    for (let i = 0; i<expr.length/10; i++){
+function decode(expr) {  
+  let holder = [];
+  let result = '';
+  for (let i = 0; i<expr.length/10; i++){
   holder.push(expr.slice(i*10,i*10+10))
-}
-
-for(let i=0; i<holder.length; i++){
+  }
+  for(let i=0; i<holder.length; i++){
   if (holder[i]==='**********'){
     result = result + ' '
   }else{
@@ -53,7 +52,6 @@ for(let i=0; i<holder.length; i++){
   }
 }return result
 }
-
 
 function wordDecode(encoded){
   let word = ''
@@ -67,7 +65,6 @@ function wordDecode(encoded){
     }
   }return word
 }
-
 
 module.exports = {
     decode
